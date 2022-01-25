@@ -11,11 +11,11 @@ var current_url = location.href;
     }, {passive:false})
 
 function setTheme(){
-    set_theme_property('--theme-primary-color', '#01a3a4');
-    set_theme_property('--theme-secondary-color', 'darkcyan')
+    _set_theme_property('--theme-primary-color', '#01a3a4');
+    _set_theme_property('--theme-secondary-color', 'darkcyan')
 }
 
-function set_theme_property(property, value){
+function _set_theme_property(property, value){
     document.documentElement.style.setProperty(property, value);
 }
 
@@ -105,6 +105,10 @@ const ViewManager = {
 
     set_title(title){
         _set_title(title)
+    },
+
+    set_theme_property(property, value){
+        _set_theme_property(property, value)
     }
 }
 

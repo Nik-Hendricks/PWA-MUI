@@ -7,11 +7,14 @@ class OtherInfoView extends View{
 
     connectedCallback(){
         this.classList.add('view')
-        this.innerHTML = `  
-                            `
+        this.innerHTML = `<input id="color" type="color" value="#ff0000"/>`
 
+       var color_picker = document.getElementById("color")
 
+        color_picker.addEventListener("input", (e) => {
+            window.VM.set_theme_property('--theme-primary-color', e.target.value)
 
+        });
 
         window.DP.dispatch("VIEW_LOAD")
     }

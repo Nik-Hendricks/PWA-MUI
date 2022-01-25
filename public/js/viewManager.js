@@ -11,8 +11,12 @@ var current_url = location.href;
     }, {passive:false})
 
 function setTheme(){
-    document.documentElement.style.setProperty('--theme-primary-color', '#01a3a4');
-    document.documentElement.style.setProperty('--theme-secondary-color', 'darkcyan')
+    set_theme_property('--theme-primary-color', '#01a3a4');
+    set_theme_property('--theme-secondary-color', 'darkcyan')
+}
+
+function set_theme_property(property, value){
+    document.documentElement.style.setProperty(property, value);
 }
 
 function _set_title(title){
@@ -76,6 +80,7 @@ function _get_view_from_url(){
     }
 }
 
+setTheme();
 setTimeout(() => {
     _url_listener();
 }, 350)

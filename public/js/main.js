@@ -19,6 +19,8 @@ import {PostCard} from '/components/PostCard.js';
 import {ContextMenu} from '/components/ContextMenu.js';
 import {CodeFormat} from '/components/CodeFormat.js';
 import{ColorPicker} from '/components/ColorPicker.js';
+import {MusicPlayer} from '/components/MusicPlayer.js';
+import {SliderInput} from '/components/SliderInput.js';
 //import all views
 import {NotFoundView} from '/views/404View.js';
 import {ComponentsView} from '/views/ComponentsView.js';
@@ -27,7 +29,7 @@ import {OtherInfoView} from '/views/OtherInfoView.js';
 
 
 window.onload = () => {
-    //register_service_worker();
+    register_service_worker();
     register_views();
 
     window.DP.on("VIEW_LOAD", () => {
@@ -48,7 +50,7 @@ window.onload = () => {
     })
 
     window.DP.on('NO_AUTH', () => {
-        
+
     })   
 
 

@@ -5,34 +5,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open('v1').then((cache) => {
       return cache.addAll([
-        '/components/header.js',
-        '/components/content.js',
-        '/components/dankRater.js',
-        '/components/dankDropdownInput.js',
-        '/components/loadingSpinner.js',
-        '/components/sidescroller.js',
-        '/components/card.js',
-        '/css/main.css',
-        '/img/blue_dream.png',
-        '/img/icons-192.png',
-        '/img/icons-512.png',
-        '/img/weed1.png',
-        '/js/API2.js',
-        '/js/main.js',
-        '/js/dispatcher.js',
-        '/js/userManager.js',
-        '/js/viewManager.js',
-        '/views/404View.js',
-        '/views/userView.js',
-        '/views/mapView.js',
-        '/views/verifyAddressView.js',
-        '/views/despensaryView.js',
-        '/views/dankTestView.js',
-        '/views/editProfileView.js',
-        '/views/editDispensaryView.js',
-        '/views/exploreView.js',
-        '/views/exploreSubView.js',
-        '/index.html'
+
       ]);
     })
   );

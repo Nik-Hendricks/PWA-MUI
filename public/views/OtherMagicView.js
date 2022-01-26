@@ -8,6 +8,7 @@ class OtherMagicView extends View{
     connectedCallback(){
         this.classList.add('view')
         this.innerHTML = `  <color-picker></color-picker>
+                            <music-player></music-player>
                             `
 
 

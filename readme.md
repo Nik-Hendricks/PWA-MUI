@@ -19,7 +19,7 @@ in `/public/index.html` you will see the main html file loaded for this whole we
  <loading-spinner></loading-spinner>
 ```
 
-it is up to you to define pages for your user. you can see and example of this in the `/js/main.js` file. line 95 is the javascript object for defining routes throughout the app. All of these pages will also need to be imported you can see and an example at `/js/main.js` line 23 
+it is up to you to define pages for your user. you can see an example of this in `/public/js/main.js`
 
 an example of the using the router
 
@@ -51,3 +51,11 @@ the `view` attribute denotes the view element name. as denoted at the bottom of 
 ```javascript
 window.customElements.define('element-name', ElementClass)
 ```
+
+to create a new page for your app simply create a new file in `/public/views/` ensure you import your custom element at the top of your `/public/js/main.js` file
+```javascript
+import{ElementClass} from '/js/components/ElementFile.js';
+```
+Pages are just custom elements with `class="view"` the `/public/css/main.css/` file will handle the styling for the page. all you need to do is use the custom elements in the `innerHTML`
+
+all of the predefined components are in `/public/components/` this example 

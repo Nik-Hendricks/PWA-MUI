@@ -728,11 +728,11 @@ textarea{
 }
 
 .chip{
+    --chip-height:50px;
     position:relative;
-    height:50px;
+    height:var(--chip-height);
+    width:auto;
     border-radius: 25px;
-    padding-left:20px;
-    padding-right:20px;
     background:var(--theme-card-color);
     margin-left:var(--global-margin);
     margin-top:var(--global-margin);
@@ -778,20 +778,27 @@ textarea{
     font-size:20px;
 }
 
-.chip .material-icons{
+.chip .material-icons,.chip .material-icons-outlined{
     float:left;
+    margin-left:var(--global-margin);
     color:var(--theme-primary-color);
-    line-height: 50px;
+    line-height: var(--chip-height);
 }
 
 .chip p{
+    all:unset;
     color:var(--theme-text-primary-color);
-    line-height:50px;
-    padding:0;
-    margin:0;
+    line-height:var(--chip-height);
+    padding:0px;
+    margin:0px;
+    margin-left:var(--global-margin);
+    
     font-size:15px;
     text-transform: capitalize;
 }
+
+
+
 
 .primary-text-color{
     color:var(--theme-text-primary-color) !important;

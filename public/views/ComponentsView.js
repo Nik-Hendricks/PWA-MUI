@@ -7,7 +7,7 @@ class ComponentsView extends View{
 
     connectedCallback(){
         this.classList.add('view')
-        this.innerHTML = `  <p><code-format><card-item></code-format> component</p>
+        this.innerHTML = ` <p><code-format><card-item></code-format> component</p>
                             <card-item variant="1">
                                 
                             </card-item>
@@ -40,8 +40,13 @@ class ComponentsView extends View{
 
                             <hr>
 
-                            <p><code-format><wide-button></code-format></p>
+                            <p><code-format><wide-button></code-format> component</p>
                             <wide-button text="Wide Button" icon="info"></wide-button>
+
+                            <hr>
+                            
+                            <p><code-format><color-picker></code-format> component</p>
+                            <color-picker></color-picker>
                             `
 
         document.getElementById('post-card').appendImage("https://via.placeholder.com/300")

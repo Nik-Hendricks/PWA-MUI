@@ -9,7 +9,7 @@ import {MenuBarTop} from '/components/MenuBarTop.js';
 import {MainContent} from '/components/MainContent.js';
 import {LoadingSpinner} from '/components/loadingSpinner.js';
 import {SideScroller} from '/components/sidescroller.js';
-import {Card} from '/components/card.js';
+import {Card} from '/components/Card.js';
 import {WideButton} from '/components/widebutton.js';
 import {IconButton} from '/components/iconbutton.js';
 import {GridContainer} from '/components/GridContainer.js';
@@ -18,6 +18,7 @@ import {ListItem} from '/components/ListItem.js';
 import {PostCard} from '/components/PostCard.js';
 import {ContextMenu} from '/components/ContextMenu.js';
 import {CodeFormat} from '/components/CodeFormat.js';
+import{ColorPicker} from '/components/ColorPicker.js';
 //import all views
 import {NotFoundView} from '/views/404View.js';
 import {ComponentsView} from '/views/ComponentsView.js';
@@ -47,6 +48,7 @@ window.onload = () => {
     })
 
     window.DP.on('NO_AUTH', () => {
+        
     })   
 
 
@@ -81,10 +83,8 @@ function getMobileOperatingSystem() {
 function register_service_worker(){
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/worker').then(function(registration) {
-            // Registration was successful
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, function(err) {
-        // registration failed :(
         console.log('ServiceWorker registration failed: ', err);
         });
     }

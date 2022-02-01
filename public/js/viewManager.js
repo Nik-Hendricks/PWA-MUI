@@ -24,36 +24,43 @@ function _set_title(title){
 }
 
 function _set_view(view, sub_view){
-        if(routes[view]){
+        if(!routes[view]){
+            window.history.back();
+            _set_title(routes['404'].view);
+        }else{
             if(sub_view){
-                console.log('subview')
                 if(routes[view].subViews){
-                    if(routes[view].subViews['*']){
-                        //route sends same view for all outcomes
-                        main_content_div.innerHTML = routes[view].subViews['*'].view
-                        _set_title(routes[view].subViews["*"].title)
-                    }else{
-                        if(routes[view].subViews[sub_view]){
-                            main_content_div.innerHTML = routes[view].subViews[sub_view].view;
-                            _set_title(routes[view].subViews[sub_view].title)
+                    console.log('sub_view')
+                    var counter = 0;
+                    for(var key in routes[view].subViews){
+                        if(key == "*"  && counter == 0){
+                            _set_title(routes[view].subViews['*'].title)
+                            main_content_div.innerHTML = routes[view].subViews['*'].view;
                         }else{
-                            console.log("not found")
-                            window.history.back();
+                            if(routes[view].subViews[sub_view]){
+                                _set_title(routes[view].subViews[sub_view].title)
+                                main_content_div.innerHTML = routes[view].subViews[sub_view].view;
+                            }else{
+                                if(routes[view].subViews['*']){
+                                    _set_title(routes[view].subViews['*'].title)
+                                    main_content_div.innerHTML = routes[view].subViews['*'].view;
+                                }else{
+                                    window.history.back();
+                                }
+                            }
                         }
+                        counter++;
                     }
+  
                 }else{
+                    console.log('no')
                     window.history.back();
                 }
             }else{
-                if(routes[view]){
-                    main_content_div.innerHTML = routes[view].view
-                    _set_title(routes[view].title)
-                }else{
-                    window.history.back();
-                }
+                _set_title(routes[view].title)
+                main_content_div.innerHTML = routes[view].view;
             }
-        }else{
-            window.history.back();
+
         }
 }
 

@@ -110,7 +110,17 @@ function register_views(){
         },
         "About":{
             title:"Other Info",
-            view:`<other-info-view></other-info-view>`
+            view:`<other-info-view></other-info-view>`,
+            subViews:{
+                "test":{
+                    title:'test view',
+                    view:'<other-info-view></other-info-view>'
+                },
+                "*":{
+                    title:'SUB VIEW',
+                    view:'<other-info-view></other-info-view>'
+                }
+            }
         }
     }
     

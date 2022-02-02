@@ -83,11 +83,12 @@ function getMobileOperatingSystem() {
 }
 
 function register_service_worker(){
+    console.log('service worker registration')
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/worker').then(function(registration) {
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, function(err) {
-        console.log('ServiceWorker registration failed: ', err);
+            console.log('ServiceWorker registration failed: ', err);
         });
     }
 }
@@ -95,20 +96,31 @@ function register_service_worker(){
 
 
 function register_views(){
+    var theme_primary_color = '';
+    var theme_secondary_color = '';
+
     var routes = {
         "":{
+            primary_color: theme_primary_color,
+            secondary_color: theme_secondary_color,
             title: 'Components',
             view:`<components-view></components-view>`
         },
         "Components":{
+            primary_color: theme_primary_color,
+            secondary_color: theme_secondary_color,
             title:'Components',
             view:'<components-view></components-view>'
         },
         "OtherMagic":{
+            primary_color: theme_primary_color,
+            secondary_color: theme_secondary_color,
             title:'Other Magic',
             view:`<other-magic-view></other-magic-view>`
         },
         "About":{
+            primary_color: theme_primary_color,
+            secondary_color: theme_secondary_color,
             title:"Other Info",
             view:`<other-info-view></other-info-view>`,
             subViews:{

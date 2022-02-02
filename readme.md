@@ -21,7 +21,7 @@ in `/public/index.html` you will see the main html file loaded for this whole we
 
 it is up to you to define pages for your user. you can see an example of this in `/public/js/main.js`
 
-an example of the using the router
+here is an example of the using the router
 
 ```javascript
 var routes = {
@@ -39,14 +39,22 @@ var routes = {
     },
     "About":{
         title:"Other Info",
-        view:`<other-info-view></other-info-view>`
+        view:`<other-info-view></other-info-view>`,
+        subViews:{
+            //this is a subview so the route would be /About/subView
+            "subView":{
+                title:"this is a subview",
+                view:`<about-sub-view></about-sub-view>`
+            }
+        }
     }
 }
 
 window.VM.register(routes)
 ```
 
-The `title` attribte denotes the text displayed in the `<menu-bar-top>` of every page. 
+The `title` attribute denotes the text displayed in the `<menu-bar-top>` of every page.
+
 the `view` attribute denotes the view element name. as denoted at the bottom of every custom view using
 ```javascript
 window.customElements.define('element-name', ElementClass)
@@ -58,4 +66,4 @@ import{ElementClass} from '/js/components/ElementFile.js';
 ```
 Pages are just custom elements with `class="view"` the `/public/css/main.css/` file will handle the styling for the page. all you need to do is use the custom elements in the `innerHTML`
 
-all of the predefined components are in `/public/components/` this example 
+all of the predefined components are in `/public/components/` of this example 

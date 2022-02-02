@@ -977,7 +977,7 @@ hr{
 .music-player .material-icons{
     line-height: calc(var(--music-player-height) - 30px);
     font-size:40px;
-    width:33vw;
+    width:33%;
     float:left;
     text-align:center;
     color:var(--theme-primary-color);

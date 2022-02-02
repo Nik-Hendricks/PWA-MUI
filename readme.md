@@ -55,7 +55,7 @@ window.VM.register(routes)
 
 The `title` attribute denotes the text displayed in the `<menu-bar-top>` of every page.
 
-the `view` attribute denotes the view element name. as denoted at the bottom of every custom view using
+The `view` attribute denotes the view element name. as denoted at the bottom of every custom view using
 ```javascript
 window.customElements.define('element-name', ElementClass)
 ```

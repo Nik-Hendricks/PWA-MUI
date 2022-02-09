@@ -746,13 +746,15 @@ textarea{
 }
 
 .grid-container .card-2{
-    width:calc(50% - 5px);
+    width:calc(50%);
     float:left;
     height:auto !important;
     background:transparent;
     margin:0px;
     padding:0px;
 }
+
+
 
 
 .grid-container .card{
@@ -941,6 +943,156 @@ hr{
     border-radius:7.5px;
   }
 
+  .sql-editor .line-number-container{
+    position:absolute;
+    top:2px;
+    left:2px;
+    bottom:2px;
+    width:28px;
+    background:var(--theme-background-color);
+    border-bottom-left-radius:var(--global-border-radius);
+    border-top-left-radius:var(--global-border-radius);
+}
+
+
+.sql-editor .line-number-container p{
+    padding:0px;
+    margin:0px;
+    line-height: 30px;
+    text-align: center;
+    color:var(--theme-primary-color);
+}
+.sql-editor .textarea-container{
+    position:absolute;
+    left:30px;
+    right:0px;
+    bottom:0px;
+    top:0px;
+    border-radius:var(--global-border-radius);
+    padding:2px;
+}
+
+.sql-editor .textarea-container textarea{
+    all:unset;
+    background:var(--theme-background-color);
+    width:calc(100% - 5px);
+    height:100%;
+    border-top-right-radius:var(--global-border-radius);
+    border-bottom-right-radius:var(--global-border-radius);
+    line-height: 30px;
+    color:var(--theme-primary-color);
+    padding-left:5px;
+    -webkit-user-select: text;
+}
+
+.sql-editor .card{
+    height:calc(6 * 30px) !important;
+    overflow:none !important;
+
+}
+
+.sql-editor .output{
+    height:auto !important;
+    overflow-y:scroll;
+    
+}
+
+.calculator{
+    width:100%;
+    max-width: 350px;
+    height:440px;
+    margin:auto;
+}
+
+.calculator-btn{
+    --calculator-btn-size:calc(calc(350px / 4) - 5px * 2);
+    width:var(--calculator-btn-size);
+    height:var(--calculator-btn-size);
+    float:left;
+    margin:5px;
+    background:var(--theme-primary-color);
+    border-radius: var(--global-border-radius);
+}
+
+.calculator-btn.double{
+    background:var(--theme-card-color);
+    width: calc(calc(var(--calculator-btn-size) * 2) + 10px) !important;
+}
+
+.calculator-btn p{
+    width:100%;
+    height:var(--calculator-btn-size);
+    line-height: var(--calculator-btn-size);
+    text-align: center;
+    padding:0px;
+    margin:0px;
+    vertical-align: middle;
+}
+
+.calculator-output{
+    width:calc(100% - 5px) !important;
+    max-width:350px;
+    margin-left:50% !important;
+    position:relative;
+    left:-175px !important;
+    height:55px !important;
+    margin-bottom:10px !important;
+    margin-left:var(--global-margin);
+    background: var(--theme-card-color) !important;
+    outline:none;
+    padding-left:10px;
+    font-size:20px;
+}
+
+.calculator-history{
+    margin-top:var(--global-margin);
+    width:100%;
+
+}
+
+
+.calculator-history .history-item{
+    position:relative;
+    height:auto;
+}
+
+.calculator-history .calculator-mode{
+    position:relative;
+    right:0px;
+    top:0px;
+    float:right;
+    padding:0px;
+    margin:0px;
+    margin-right:var(--global-margin);
+    margin-top:-35px;
+}
+
+
+
+.calculator-history .secondary, .calculator-history .primary{
+    font-size:20px !important;
+    padding:0px !important;
+    margin:0px !important;
+    line-height: 20px;
+    float:unset !important;
+    margin-left:var(--global-margin) !important;
+    margin-top:10px !important;
+}
+
+.calculator-history .secondary{
+    width:100%;
+    margin-top:var(--global-margin);
+}
+
+.calculator-history .primary{
+    width:100%;
+}
+
+.calculator-history hr{
+    margin-top:var(--global-margin) !important;
+}
+
+
 @media only screen and (min-width: 500px) {
     .card{
         margin-left:auto;
@@ -955,9 +1107,9 @@ hr{
     
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 500px) {
     main-content{
-        width:700px;
+        width:500px;
         margin:auto;
     }
 }

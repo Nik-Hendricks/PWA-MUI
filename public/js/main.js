@@ -21,6 +21,9 @@ import {CodeFormat} from '/components/CodeFormat.js';
 import{ColorPicker} from '/components/ColorPicker.js';
 import {MusicPlayer} from '/components/MusicPlayer.js';
 import {SliderInput} from '/components/SliderInput.js';
+import {SQLEditor} from '/components/SQLEditor.js';
+import {CustomButton} from '/components/CustomButton.js'
+import {Calculator} from '/components/Calculator.js';
 //import all views
 import {NotFoundView} from '/views/404View.js';
 import {ComponentsView} from '/views/ComponentsView.js';

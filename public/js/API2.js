@@ -54,18 +54,13 @@ function _eraseCookie(name) {
     document.cookie = name + '=; Max-Age=0'
 }
 
-function _get_store_items(){
+function _evaluate(expression){
     return new Promise(resolve => {
-        http_fetch(`${root_url}/get_store_items/`,null,"GET").then(res => {
-            resolve(res)
-        })
-    })
-}
+        var e = encodeURIComponent(expression)
 
-function _insert_store_item(data){
-    return new Promise(resolve => {
-        http_fetch(`${root_url}/insert_store_item`, data, "POST").then(res => {
-            resolve(res)
+        http_fetch(`http://api.mathjs.org/v4`, {expr:expression}, "POST").then(res => {
+            console.log(res)
+            resolve(res);
         })
     })
 }
@@ -140,23 +135,12 @@ const API2 = {
             })
         })
     },
-    create_item(data){
+
+    evaluate(expression){
         return new Promise(resolve => {
-            _insert_store_item(data).then(res => {
-                console.log(res)
+            _evaluate(expression).then(res => {
+                resolve(res)
             })
-        })
-    },
-
-    get_store_items(){
-        return new Promise(resolve => {
-            resolve(store_items)
-        })
-    },
-
-    get_store_item(s_id){
-        return new Promise(resolve => {
-            resolve(store_items[s_id])
         })
     }
 }

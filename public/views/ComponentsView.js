@@ -52,6 +52,12 @@ class ComponentsView extends View{
 
                             <p><code-format><custom-calculator></code-format> component</p>
                             <custom-calculator></custom-calculator>
+
+                            <hr>
+
+                            <p><code-format><custom-calendar></code-format> component</p>
+                            <custom-calendar></custom-calendar>
+
                             `
 
         document.getElementById('post-card').appendImage("https://via.placeholder.com/300")

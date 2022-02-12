@@ -1092,6 +1092,64 @@ hr{
     margin-top:var(--global-margin) !important;
 }
 
+.calendar{
+    display:block;
+    width:350px;
+    height:350px;
+    margin:auto;
+}
+
+.calendar-day{
+    --calendar-btn-size:calc(calc(350px / 7) - 5px * 2);
+    width:var(--calendar-btn-size);
+    height:var(--calendar-btn-size);
+    float:left;
+    margin:5px;
+    background:var(--theme-secondary-color);
+    border-radius: 10px;
+}
+
+.calendar-day p{
+    width:100%;
+    height:var(--calendar-btn-size);
+    line-height: var(--calendar-btn-size);
+    text-align: center;
+    padding:0px;
+    margin:0px;
+    vertical-align: middle;
+}
+
+.calendar-day.outline{
+    border:1px solid var(--theme-text-primary-color);
+}
+
+.calendar-day.secondary{
+    background:var(--theme-card-color)
+}
+
+.calendar-title{
+    text-align: center;
+    margin-bottom:5px;
+    text-transform: capitalize;
+}
+
+.calendar-cols{
+    height:20px;
+    width:350px;
+    margin:auto;
+    position:relative;
+}
+
+.calendar-cols p{
+    width:40px;
+    margin:5px;
+    padding:0px;
+    float:left;
+    font-size:auto;
+    text-align: center;
+    color:var(--theme-text-secondary-color);
+    text-transform: capitalize;
+}
 
 @media only screen and (min-width: 500px) {
     .card{

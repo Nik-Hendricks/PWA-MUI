@@ -24,6 +24,7 @@ import {SliderInput} from '/components/SliderInput.js';
 import {SQLEditor} from '/components/SQLEditor.js';
 import {CustomButton} from '/components/CustomButton.js'
 import {Calculator} from '/components/Calculator.js';
+import {Calendar} from '/components/Calendar.js';
 //import all views
 import {NotFoundView} from '/views/404View.js';
 import {ComponentsView} from '/views/ComponentsView.js';

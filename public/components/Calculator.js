@@ -1,5 +1,12 @@
 import {Component} from '/components/Component.js';
 
+String.prototype.insert = function(index, string) {
+  if (index > 0) {
+    return this.substring(0, index) + string + this.substr(index);
+  }
+  return string + this;
+};
+
 class Calculator extends Component{
     constructor(){
         super();
@@ -102,19 +109,15 @@ class Calculator extends Component{
             "_=":{
                 onclick: () => {
                     var eval_string = this.calculator_output.value.toLowerCase();
-                    console.log(this.calc_mode)
+
                     //convert all instances of "resin(x)" to "asin(x)"
-
-   
                     var result = eval_string.split('resin(').join('asin(');
-                    console.log(result)
+
                     if(this.calc_mode == 'deg'){
-                        result = result.split('cos(').join('cos((180/pi) * ').split('sin(').join('sin((180/pi) * ')
+                        result = result.replace(/\d+(?:\.\d+)?/g, x => `(${x} deg )`)
                     }
-
+                  
                     console.log(result)
-                    console.log(localStorage)
-
                     window.API2.evaluate(result).then(res => {
                         if(res.result){
                             this.calculator_history.innerHTML += `<div class="history-item"><p class="primary">${eval_string}</p><p class="secondary">${res.result}</p><p class="calculator-mode">${this.calc_mode}</p></div><hr>`
@@ -122,8 +125,6 @@ class Calculator extends Component{
                         }
 
                     })
-
-                    console.log(localStorage)
                 },
                 class:'double',
             }
@@ -145,7 +146,6 @@ class Calculator extends Component{
         this.calculator_history = document.getElementById('calculator-history');
 
         for(var key in this.buttons){
-            console.log(this.buttons[key].class)
             var btn = document.createElement('div');
             btn.classList.add('calculator-btn')
             if(this.buttons[key].class){
@@ -158,7 +158,6 @@ class Calculator extends Component{
     }
 
     calc_mode_toggle(e){
-        console.log('toggle')
         if(this.calc_mode == "deg"){
             this.calc_mode = "rad"
         }else{
@@ -166,6 +165,15 @@ class Calculator extends Component{
         }
         e.path[0].innerHTML = this.calc_mode
     }
+
+    grab_numbers_from_string(string){
+        return string.match(/\d+/g)   
+    }
+
+    is_numeric(str){
+        return /^\d+$/.test(str);
+    }
+
 
 }
 window.customElements.define('custom-calculator', Calculator);
